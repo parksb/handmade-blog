@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,700,900');
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  font-feature-settings: normal;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: auto;
+  padding: 20px 30px 50px 30px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-container {
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+@import 'navigation.scss';

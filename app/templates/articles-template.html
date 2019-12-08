@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Title</title>
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./src/css/init.css">
+</head>
+
+<body>
+  <header id="top-container" role="navigation">
+  </header>
+
+  <main id="main-container">
+    <section id="articles-container">
+      <ul>
+        <% articles.reverse().map((article) => { %>
+        <li id="articles-list-item">
+          <a href="./article/<%= article.id %>.html">
+            <h1><%= article.title %></h1>
+            <h2><%= article.subtitle %></h2>
+            <time><%= article.date %></time>
+            <ul class="articles-tags">
+              <% article.tags.map((tag) => { %>
+              <li>#<%= tag.trim() %></li>
+              <% }) %>
+            </ul>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+
+  <script defer src="./src/ts/init.ts"></script>
+  <script defer src="./src/ts/articles.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+#work-container {
+  margin-top: 90px;
+}
+
+#work-title {
+  width: auto;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+#work-subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  word-break: keep-all;
+  font-weight: 400;
+}
+
+#work-container {
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: white;
+      background-color: black;
+    }
+  }
+}
+
+#work-container {
+  img {
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid black;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 200%;
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/scss/index.scss"],"names":[],"mappings":"AAAA,sBACE,eAAgB,CAChB,UAAW,CAGb,YACE,UAAW,CAGb,gBACE,UAAW,CACX,eAAgB","file":"ts.e40e0965.css","sourceRoot":"../app","sourcesContent":["#main-emoji-container {\n  max-width: 350px;\n  width: 100%;\n}\n\n#main-emoji {\n  width: 100%;\n}\n\n#github-heatmap {\n  width: 100%;\n  max-width: 800px;\n}"]}

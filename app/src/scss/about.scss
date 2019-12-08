@@ -1,0 +1,26 @@
+#about-container {
+  ul,
+  p {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+
+  ul {
+    list-style: none;
+    list-style-position: inside;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: black;
+      color: white;
+    }
+  }
+}

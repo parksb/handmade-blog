@@ -1,0 +1,36 @@
+#works-container {
+  max-width: 900px;
+  min-width: 200px;
+  margin-top: 10px;
+  margin-left: -10px;
+  -webkit-columns: 120px 120;
+  -moz-columns: 120px 120;
+  columns: 120px 120;
+
+  .works-content {
+    width: 120px;
+    display: inline-block;
+    padding: 10px;
+    line-height: 12px;
+  
+    &:hover,
+    &:focus {
+      background-color: black;
+      color: white;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      margin-bottom: 5px;
+    }
+  }
+
+  h1 {
+    display: inline;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+}
