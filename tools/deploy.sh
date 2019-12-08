@@ -1,18 +1,18 @@
 #! /bin/bash
 
-DIST="./dist"
+DIST="dist"
 CYAN="\033[36m"
 GREEN="\033[32m"
 WHITE="\033[0m"
 
-echo -e "${CYAN}Deploy to ${DIST}:\n"
+echo -e "${CYAN}Deploy to ./${DIST}:\n"
 
 echo -e "${GREEN}Run build script...${WHITE}"
 echo -e "${WHITE}> ./tools/build.sh"
 ./tools/build.sh
 
-echo -e "${WHITE}> cd ${DIST}"
-cd ${DIST}
+echo -e "${WHITE}> cd ./${DIST}"
+cd ./$DIST
 
 echo -e "> git status -s\n"
 git status -s
@@ -35,7 +35,7 @@ while true; do
 done
 
 echo -e "${GREEN}Use subtree push to gh-pages branch...${WHITE}"
-echo -e "${WHITE}> cd ../ && git subtree push --prefix dist origin gh-pages"
-cd ../ && git subtree push --prefix dist origin gh-pages
+echo -e "${WHITE}> cd ../ && git subtree push --prefix ${DIST} origin gh-pages"
+cd ../ && git subtree push --prefix $DIST origin gh-pages
 
 echo -e "\n${CYAN}Done!"
