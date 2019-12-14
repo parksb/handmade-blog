@@ -8,7 +8,7 @@ import * as md from 'markdown-it';
 import * as mdFootnote from 'markdown-it-footnote';
 import * as mdTex from 'markdown-it-texmath';
 
-import ArticleListPublisher from './ArticleListPublisher';
+import PagePublisher from './PagePublisher';
 import ArticleMetaInfo from './classes/ArticleMetaInfo';
 import Article from './classes/Article';
 import ArticleModel from './models/ArticleModel';
@@ -16,7 +16,7 @@ import ArticleModel from './models/ArticleModel';
 class ArticlePublisher {
   static ARTICLE_ORIGIN_PATH: string = path.join(__dirname, '../_articles');
   static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/article');
-  static ARTICLE_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/article-template.html'));
+  static ARTICLE_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/article.ejs'));
   static IGNORED_FILES: string[] = ['.DS_Store'];
 
   static md: md = new md({
@@ -93,7 +93,7 @@ class ArticlePublisher {
       return article.getArticle();
     });
 
-    ArticleListPublisher.publishArticleList(distArticles);
+    PagePublisher.publishArticles(distArticles);
   }
 
   public static publishArticle(id: number) {
@@ -126,7 +126,7 @@ class ArticlePublisher {
       return article.getArticle();
     });
 
-    ArticleListPublisher.publishArticleList(distArticles);
+    PagePublisher.publishArticles(distArticles);
   }
 }
 

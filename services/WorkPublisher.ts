@@ -6,12 +6,12 @@ import * as path from 'path';
 import WorkMetaInfo from './classes/WorkMetaInfo';
 import Work from './classes/Work';
 import WorkModel from './models/WorkModel';
-import WorkListPublisher from './WorkListPublisher';
+import PagePublisher from './PagePublisher';
 
 class WorkPublisher {
   static WORK_ORIGIN_PATH: string = path.join(__dirname, '../_works');
   static WORK_DIST_PATH: string = path.join(__dirname, '../app/work');
-  static WORK_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/work-template.html'));
+  static WORK_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/work.ejs'));
 
   static md: md = new md({
     html: false,
@@ -75,7 +75,7 @@ class WorkPublisher {
       return work.getWork();
     });
 
-    WorkListPublisher.publishWorkList(distWorks);
+    PagePublisher.publishWorks(distWorks);
   }
 }
 
