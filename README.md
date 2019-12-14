@@ -25,20 +25,27 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     $ npm install
     ```
 
-3. Publish the example articles and works by `npm run publish`. It converts a markdown documents in `_articles` or `_works` directory to HTML files.
+3. Modify `config.json` file in `services` directory to set your blog title and subtitle.
+
+    ```json
+    {
+      "blogTitle": "Lorem Ipsum",
+      "blogSubtitle": "lorem ipsum"
+    }
+    ```
+
+4. Publish the example articles and works by `npm run publish`. It converts a markdown documents in `_articles` or `_works` directory to HTML files.
 
     ```bash
     $ npm run publish article
     $ npm run publish work
     ```
 
-4. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. 
+5. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. 
 
     ```bash
     $ npm start
     ```
-
-5. You may need to change the hardcoded text, such as the title of the site. You can modify them directly by change the contents of the HTML files in the `app` directory, and run `npm run build`. (Yes, we need to improve it.)
 
 6. Run deploy script if you're ready to host a live server. This script builds local files to `dist` directory and creates `gh-pages` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` automatically.
 
@@ -85,31 +92,37 @@ Starts local development server at http://localhost:1234/.
 
 ### `npm run publish`
 
-Converts markdown documents to HTML files.
+Converts templates to HTML files.
 
 ```bash
-$ npm start publish article
+$ npm run publish article
 ```
 
 Converts all articles.
 
 ```bash
-$ npm start publish work
+$ npm run publish works
 ```
 
 Converts all works.
 
 ```bash
-$ npm start publish article 5
+$ npm run publish article 5
 ```
 
-Converts an article that id is 5.
+Converts an article which id is 5.
 
 ```bash
-$ npm start publish work 3
+$ npm run publish work 3
 ```
 
 Converts a work which id is 3.
+
+```bash
+$ npm run publish page
+```
+
+Converts all pages.
 
 ### `npm run watch`
 
