@@ -6,7 +6,7 @@ class PagePublisher {
   static config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')).toString());
 
   public static publishIndex() {
-    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/index.html'));
+    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/index.ejs'));
     const DIST_PATH: string = path.join(__dirname, '../app/index.html');
     const { blogTitle } = PagePublisher.config;
 
@@ -14,7 +14,7 @@ class PagePublisher {
   }
 
   public static publishNavigation() {
-    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/navigation.html'));
+    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/navigation.ejs'));
     const DIST_PATH: string = path.join(__dirname, '../app/navigation.html');
     const { blogTitle, blogSubtitle } = PagePublisher.config;
 
@@ -22,7 +22,7 @@ class PagePublisher {
   }
 
   public static publishAbout() {
-    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/about.html'));
+    const TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/about.ejs'));
     const DIST_PATH: string = path.join(__dirname, '../app/about.html');
     const { blogTitle } = PagePublisher.config;
 

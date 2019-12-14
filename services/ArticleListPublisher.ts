@@ -5,7 +5,7 @@ import * as path from 'path';
 import ArticleModel from './models/ArticleModel';
 
 class ArticleListPublisher {
-  static ARTICLE_LIST_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/articles-template.html'));
+  static ARTICLE_LIST_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/articles.ejs'));
   static ARTICLE_LIST_DIST_PATH: string = path.join(__dirname, '../app/articles.html');
 
   public static publishArticleList(articles: ArticleModel[]) {

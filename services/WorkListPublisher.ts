@@ -5,7 +5,7 @@ import * as path from 'path';
 import WorkModel from './models/WorkModel';
 
 class WorkListPublisher {
-  static WORK_LIST_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/works-template.html'));
+  static WORK_LIST_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/works.ejs'));
   static WORK_LIST_DIST_PATH: string = path.join(__dirname, '../app/works.html');
 
   public static publishWorkList(works: WorkModel[]) {

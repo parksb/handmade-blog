@@ -11,7 +11,7 @@ import WorkListPublisher from './WorkListPublisher';
 class WorkPublisher {
   static WORK_ORIGIN_PATH: string = path.join(__dirname, '../_works');
   static WORK_DIST_PATH: string = path.join(__dirname, '../app/work');
-  static WORK_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/work-template.html'));
+  static WORK_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/work.ejs'));
 
   static md: md = new md({
     html: false,
