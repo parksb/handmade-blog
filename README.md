@@ -126,7 +126,7 @@ Converts all pages.
 
 ### `npm run watch`
 
-Rebuilds markdown files in `_articles` directory automatically whenever the files are modified.
+Rebuilds template files in `templates` directory and markdown files in `_articles` directory automatically whenever the files are modified.
 
 ### `npm run build`
 
