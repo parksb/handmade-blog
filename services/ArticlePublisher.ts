@@ -15,7 +15,7 @@ import ArticleModel from './models/ArticleModel';
 
 class ArticlePublisher {
   static ARTICLE_ORIGIN_PATH: string = path.join(__dirname, '../_articles');
-  static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/article');
+  static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/public/article');
   static ARTICLE_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/article.ejs'));
   static IGNORED_FILES: string[] = ['.DS_Store'];
 
