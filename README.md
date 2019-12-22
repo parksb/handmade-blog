@@ -1,7 +1,7 @@
 <div align="center">
   <h1>
 
-  🖖
+  ✍️
 
   Handmade Blog
   </h1>
@@ -34,7 +34,7 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     }
     ```
 
-4. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. 
+4. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. It occurs an error because there aren't published articles and works pages yet.
 
     ```bash
     $ npm start
@@ -47,14 +47,15 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     $ npm run publish work
     ```
 
-6. Run `build` and `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and creates `gh-pages` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` automatically.
+6. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and creates `gh-pages` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` automatically.
 
     ```bash
-    $ npm run build
     $ npm run deploy
     ```
 
-## Document Publishing Process
+## Usage
+
+### Writing and publishing document
 
 1. Write a document in `_articles` or `_works` directory.
 
@@ -62,9 +63,28 @@ Handmade Blog is a classic static blog generator for people who want to start a 
 
 1. Preview converted document on the local server using `npm start` script.
 
-1. Run `npm run build` and `npm run deploy` to publish the document to live server.
+1. Run `npm run deploy` to publish the document to live server.
 
-## Project Structure
+### Changing content of the page
+
+Modify an ejs template to change the contents of the existing page. For example, if you want to put an image to the landing page, open the `app/templates/index.ejs` file, and add `img` tag to the `main-container` element.
+
+```html
+<main id="main-container">
+  <img src="../assets/profile.jpg" alt="My profile picture" />
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</main>
+```
+
+Then, run `npm run publish page` script to publish the modified landing page.
+
+```bash
+$ npm run publish page
+```
+
+Done! You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
+
+### Proejct structure
 
 * `_articles` - Markdown files for the blog posts.
 * `_works` - Markdown files for the portfolio.
@@ -84,7 +104,7 @@ Handmade Blog is a classic static blog generator for people who want to start a 
 * `services` - Source code implementing `publish` script.
   * `classes`
   * `models`
-* `tools` - Source code implementing various npm scripts. 
+* `tools` - Source code implementing various npm scripts.
 
 ## Available Scripts
 
