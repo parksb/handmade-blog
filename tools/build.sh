@@ -32,8 +32,8 @@ echo "> rm -r ${DIST}/*"
 rm -r $DIST/*
 
 echo -e "\n${GREEN}Copy static files to distribution directory...${WHITE}"
-echo "> cp ./app/static/robots.txt ${DIST}/robots.txt"
-cp ./app/static/robots.txt $DIST/robots.txt
+echo "> cp -r ./app/static/* ${DIST}/"
+cp -r ./app/static/* $DIST/
 
 echo -e "\n${GREEN}Run parcel...${WHITE}"
 echo -e "> parcel build ./app/public/index.html -d ${DIST}\n"
