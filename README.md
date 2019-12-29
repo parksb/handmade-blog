@@ -28,7 +28,9 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     $ npm install
     ```
 
-3. Modify `config.json` file in `services` directory to set your blog title and subtitle.
+3. Please create `development` branch and follow [this document](https://help.github.com/en/github/administering-a-repository/setting-the-default-branch) to set the branch to a default. Because GitHub pages hosts the site based on `master` branch. In addition, separating `master` branch and `development` branch is a good practice!
+
+4. Modify `config.json` file in `services` directory to set your blog title and subtitle.
 
     ```json
     {
@@ -37,20 +39,20 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     }
     ```
 
-4. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. It occurs an error because there aren't published articles and works pages yet.
+5. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. It occurs an error because there aren't published articles and works pages yet.
 
     ```bash
     $ npm start
     ```
 
-5. Publish the example articles and works by `npm run publish`. It converts a markdown documents in `_articles` or `_works` directory to HTML files.
+6. Publish the example articles and works by `npm run publish`. It converts a markdown documents in `_articles` or `_works` directory to HTML files.
 
     ```bash
     $ npm run publish article
     $ npm run publish work
     ```
 
-6. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and creates `gh-pages` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` automatically.
+7. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and pushes it to `master` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `master` automatically.
 
     ```bash
     $ npm run deploy
