@@ -2,9 +2,13 @@ import ArticleMetaInfoModel from '../models/ArticleMetaInfoModel';
 
 class ArticleMetaInfo implements ArticleMetaInfoModel {
   id: number;
+
   title: string;
+
   subtitle?: string;
+
   date: string;
+
   tags: string | string[];
 
   setProp(name: string, value: any) {

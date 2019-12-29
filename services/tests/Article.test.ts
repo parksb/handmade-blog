@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import Article from '../../services/classes/Article';
+import Article from '../classes/Article';
 
 const articleModel = {
   id: 0,

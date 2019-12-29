@@ -1,7 +1,11 @@
 {
   "name": "handmade-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "A static blog generator for people who want to start a blog quickly",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParkSB/handmade-blog.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "bash ./tools/start.sh",
@@ -12,7 +16,7 @@
     "test": "mocha -r ts-node/register ./services/tests/**/*.test.ts"
   },
   "author": "",
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "ejs": "^2.6.1",
     "highlight.js": "^9.15.6",
@@ -30,14 +34,17 @@
     "@types/markdown-it": "0.0.7",
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.11.3",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^6.3.1",
+    "eslint-plugin-import": "^2.19.1",
     "mocha": "^6.0.2",
     "node-sass": "^4.13.0",
     "parcel-bundler": "^1.12.2",
     "sass": "^1.24.0",
     "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
-    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   }
 }

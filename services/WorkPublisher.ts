@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
+
+import * as MarkdownIt from 'markdown-it';
 import * as ejs from 'ejs';
 import * as fs from 'fs';
-import * as md from 'markdown-it';
 import * as path from 'path';
 
 import WorkMetaInfo from './classes/WorkMetaInfo';
@@ -10,10 +12,12 @@ import PagePublisher from './PagePublisher';
 
 class WorkPublisher {
   static WORK_ORIGIN_PATH: string = path.join(__dirname, '../_works');
+
   static WORK_DIST_PATH: string = path.join(__dirname, '../app/public/work');
+
   static WORK_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/work.ejs'));
 
-  static md: md = new md({
+  static md: MarkdownIt = new MarkdownIt({
     html: false,
     xhtmlOut: false,
     breaks: false,

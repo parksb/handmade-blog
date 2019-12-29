@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
+
 import * as ejs from 'ejs';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import * as MarkdownIt from 'markdown-it';
 import * as katex from 'katex';
 import * as highlightJs from 'highlight.js';
-import * as md from 'markdown-it';
 import * as mdFootnote from 'markdown-it-footnote';
 import * as mdTex from 'markdown-it-texmath';
 
@@ -15,11 +17,14 @@ import ArticleModel from './models/ArticleModel';
 
 class ArticlePublisher {
   static ARTICLE_ORIGIN_PATH: string = path.join(__dirname, '../_articles');
+
   static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/public/article');
+
   static ARTICLE_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/article.ejs'));
+
   static IGNORED_FILES: string[] = ['.DS_Store'];
 
-  static md: md = new md({
+  static md: MarkdownIt = new MarkdownIt({
     html: false,
     xhtmlOut: false,
     breaks: false,
@@ -66,9 +71,8 @@ class ArticlePublisher {
   }
 
   public static publishAllArticles() {
-    const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH).filter((file) => {
-      return !this.IGNORED_FILES.includes(file);
-    });
+    const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH)
+      .filter((file) => !this.IGNORED_FILES.includes(file));
 
     const distArticles: ArticleModel[] = articleFiles.map((articleFile: string) => {
       const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${articleFile}`);
@@ -97,9 +101,8 @@ class ArticlePublisher {
   }
 
   public static publishArticle(id: number) {
-    const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH).filter((file) => {
-      return !this.IGNORED_FILES.includes(file);
-    });
+    const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH)
+      .filter((file) => !this.IGNORED_FILES.includes(file));
 
     const distArticles: ArticleModel[] = articleFiles.map((articleFile: string) => {
       const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${articleFile}`);

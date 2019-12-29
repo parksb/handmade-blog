@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import Work from '../../services/classes/Work';
+import Work from '../classes/Work';
 
 const workModel = {
   id: 0,

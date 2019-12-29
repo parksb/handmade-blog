@@ -2,8 +2,11 @@ import WorkMetaInfoModel from '../models/WorkMetaInfoModel';
 
 class WorkMetaInfo implements WorkMetaInfoModel {
   id: number;
+
   title: string;
+
   subtitle?: string;
+
   thumbnail: string;
 
   setMetaInfoProp(name: string, value: any) {

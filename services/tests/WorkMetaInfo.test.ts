@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import WorkMetaInfo from '../../services/classes/WorkMetaInfo';
+import WorkMetaInfo from '../classes/WorkMetaInfo';
 
 describe('WorkMetainfo', () => {
   describe('set/get properties', () => {

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import ArticleMetaInfo from '../../services/classes/ArticleMetaInfo';
+import ArticleMetaInfo from '../classes/ArticleMetaInfo';
 
 describe('ArticleMetainfo', () => {
   describe('set/get properties', () => {
