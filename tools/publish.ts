@@ -1,4 +1,6 @@
-import ArticlePublisher from './../services/ArticlePublisher';
+/* eslint-disable no-console */
+
+import ArticlePublisher from '../services/ArticlePublisher';
 import WorkPublisher from '../services/WorkPublisher';
 import PagePublisher from '../services/PagePublisher';
 
@@ -11,13 +13,13 @@ switch (target) {
     console.log('\x1b[36m%s\x1b[0m', 'Run ArticlePublisher...');
 
     if (!mode || mode === 'all') {
-      console.log('Publish all articles: ArticlePublisher.publishAllArticles()');
-      ArticlePublisher.publishAllArticles();
+      console.log('Publish all articles: ArticlePublisher.publishArticles()');
+      ArticlePublisher.publishArticles();
       console.log('\x1b[36m%s\x1b[0m', 'Done!');
-    } else if (!isNaN(Number(mode))) {
+    } else if (!Number.isNaN(Number(mode))) {
       const id = Number(mode);
-      console.log(`Publish article #${id}: ArticlePublisher.publishArticle(${id})`);
-      ArticlePublisher.publishArticle(id);
+      console.log(`Publish article #${id}: ArticlePublisher.publishArticles(${id})`);
+      ArticlePublisher.publishArticles(id);
       console.log('\x1b[36m%s\x1b[0m', 'Done!');
     } else {
       console.log('\x1b[31m%s\x1b[0m', `ERR! Unknown mode '${mode}'.`);

@@ -14,7 +14,7 @@ Handmade Blog is a classic static blog generator for people who want to start a 
 
 ## Demo: [Here](https://handmade-blog.netlify.com/)
 
-![Article page preview](https://user-images.githubusercontent.com/6410412/70389251-36353400-1a00-11ea-91af-42a12b06c383.png)
+![Article page preview](https://user-images.githubusercontent.com/6410412/74097056-be43d100-4b4a-11ea-806b-7bd263d7f623.png)
 
 ## Getting Started
 

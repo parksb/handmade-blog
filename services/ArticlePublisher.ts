@@ -47,6 +47,21 @@ class ArticlePublisher {
     return text.replace(/(-{3})([\s\S]+?)(\1)/, '');
   }
 
+  private static getArticleByFilename(filename: string) {
+    const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${filename}`);
+    const htmlContent: string = this.md.render(this.extractContent(String(mdContent)));
+    const metaInfo: ArticleMetaInfo = this.extractMetaInfo(String(mdContent));
+
+    return new Article({
+      id: metaInfo.getId(),
+      title: metaInfo.getTitle(),
+      subtitle: metaInfo.getSubtitle(),
+      date: metaInfo.getDate(),
+      tags: metaInfo.getTags(),
+      content: htmlContent,
+    });
+  }
+
   public static extractMetaInfo(text: string): ArticleMetaInfo {
     const metaInfo: ArticleMetaInfo = new ArticleMetaInfo();
     const metaInfoLines: string[] = text.match(/(-{3})([\s\S]+?)(\1)/)[2]
@@ -70,63 +85,44 @@ class ArticlePublisher {
     return metaInfo;
   }
 
-  public static publishAllArticles() {
+  public static publishArticles(id?: number) {
     const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH)
       .filter((file) => !this.IGNORED_FILES.includes(file));
 
-    const distArticles: ArticleModel[] = articleFiles.map((articleFile: string) => {
-      const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${articleFile}`);
-      const htmlContent: string = this.md.render(this.extractContent(String(mdContent)));
-      const metaInfo: ArticleMetaInfo = this.extractMetaInfo(String(mdContent));
+    const distArticles: ArticleModel[] = articleFiles.map((articleFile: string, index: number) => {
+      const article = ArticlePublisher.getArticleByFilename(articleFile).getArticle();
+      const nextArticle = articleFiles[index + 1]
+          && ArticlePublisher.getArticleByFilename(articleFiles[index + 1]).getArticle();
+      const prevArticle = articleFiles[index - 1]
+          && ArticlePublisher.getArticleByFilename(articleFiles[index - 1]).getArticle();
 
-      const article: Article = new Article({
-        id: metaInfo.getId(),
-        title: metaInfo.getTitle(),
-        subtitle: metaInfo.getSubtitle(),
-        date: metaInfo.getDate(),
-        tags: metaInfo.getTags(),
-        content: htmlContent,
-      });
+      if (id) {
+        if (article.id === id) {
+          console.log(`* ${article.id}: ${article.title}`);
+          fs.writeFileSync(
+            `${this.ARTICLE_DIST_PATH}/${article.id}.html`,
+            ejs.render(String(this.ARTICLE_TEMPLATE), {
+              article,
+              nextArticle,
+              prevArticle,
+            }),
+          );
+        }
 
-      fs.writeFileSync(
-        `${this.ARTICLE_DIST_PATH}/${metaInfo.getId()}.html`,
-        ejs.render(String(this.ARTICLE_TEMPLATE), article.getArticle()),
-      );
-
-      console.log(`* ${metaInfo.getId()}: ${metaInfo.getTitle()}`);
-      return article.getArticle();
-    });
-
-    PagePublisher.publishArticles(distArticles);
-  }
-
-  public static publishArticle(id: number) {
-    const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH)
-      .filter((file) => !this.IGNORED_FILES.includes(file));
-
-    const distArticles: ArticleModel[] = articleFiles.map((articleFile: string) => {
-      const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${articleFile}`);
-      const htmlContent: string = this.md.render(this.extractContent(String(mdContent)));
-      const metaInfo: ArticleMetaInfo = this.extractMetaInfo(String(mdContent));
-
-      const article: Article = new Article({
-        id: metaInfo.getId(),
-        title: metaInfo.getTitle(),
-        subtitle: metaInfo.getSubtitle(),
-        date: metaInfo.getDate(),
-        tags: metaInfo.getTags(),
-        content: htmlContent,
-      });
-
-      if (metaInfo.getId() === id) {
-        console.log(`* ${metaInfo.getId()}: ${metaInfo.getTitle()}`);
-        fs.writeFileSync(
-          `${this.ARTICLE_DIST_PATH}/${metaInfo.getId()}.html`,
-          ejs.render(String(this.ARTICLE_TEMPLATE), article.getArticle()),
-        );
+        return article;
       }
 
-      return article.getArticle();
+      fs.writeFileSync(
+        `${this.ARTICLE_DIST_PATH}/${article.id}.html`,
+        ejs.render(String(this.ARTICLE_TEMPLATE), {
+          article,
+          nextArticle,
+          prevArticle,
+        }),
+      );
+
+      console.log(`* ${article.id}: ${article.title}`);
+      return article;
     });
 
     PagePublisher.publishArticles(distArticles);

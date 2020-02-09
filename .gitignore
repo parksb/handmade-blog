@@ -1,3 +1,6 @@
+.vscode
+.idea
+
 .cache
 .sass-cache
 

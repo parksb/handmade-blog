@@ -1,6 +1,6 @@
 ---
 id: 0
-title: "Lorem ipsum"
+title: "Lorem ipsum 0"
 subtitle: "Sed sit amet arcu a diam tincidunt porta"
 date: "2019.12.08"
 tags: "tag1, tag2"
