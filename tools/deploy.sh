@@ -13,11 +13,16 @@ echo -e "${GREEN}Run build script...${WHITE}"
 echo -e "${WHITE}> ./tools/build.sh"
 ./tools/build.sh
 
-if [[ $(git status -s) == "" ]]
-then
+if [[ $(git status -s) == "" ]]; then
   echo -e "${GREEN}Modify gitignore list temporarily...${WHITE}"
-  echo "> sed -i "" "/${DIST}/d" ./.gitignore"
-  sed -i "" "/$DIST/d" ./.gitignore
+
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "> sed -i "" "/${DIST}/d" ./.gitignore"
+    sed -i "" "/$DIST/d" ./.gitignore
+  else
+    echo "> sed -i"" "/${DIST}/d" ./.gitignore"
+    sed -i"" "/$DIST/d" ./.gitignore
+  fi
 
   echo -e "\n${GREEN}Stage and commit the all files...${WHITE}"
   echo "> git add ."
