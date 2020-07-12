@@ -16,10 +16,13 @@ import Article from './classes/Article';
 import ArticleModel from './models/ArticleModel';
 
 class ArticlePublisher {
+  // A path of the directory containing the markdown article files.
   static ARTICLE_ORIGIN_PATH: string = path.join(__dirname, '../_articles');
 
+  // A path of the directory containing the HTML article files.
   static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/public/article');
 
+  // A path of the article template file.
   static ARTICLE_TEMPLATE: Buffer = fs.readFileSync(path.join(__dirname, '../app/templates/article.ejs'));
 
   static IGNORED_FILES: string[] = ['.DS_Store'];
@@ -43,10 +46,27 @@ class ArticlePublisher {
       delimiters: 'gitlab',
     });
 
+  /**
+   * Extracts content excluding front matter block.
+   *
+   * # Example
+   *
+   * ```js
+   * const text = '---\nid: 0\ntitle: "Lorem ipsum"\n---\nSed sit amet arcu a diam tincidunt porta';
+   * console.log(extractContent(text)); // 'Sed sit amet arcu a diam tincidunt porta'
+   * ```
+   *
+   * @param text - Any text containing front matter block.
+   */
   private static extractContent(text: string): string {
     return text.replace(/(-{3})([\s\S]+?)(\1)/, '');
   }
 
+  /**
+   * Returns an article in article directory as object by filename.
+   *
+   * @param filename - An article filename.
+   */
   private static getArticleByFilename(filename: string) {
     const mdContent: Buffer = fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${filename}`);
     const htmlContent: string = this.md.render(this.extractContent(String(mdContent)));
@@ -62,6 +82,19 @@ class ArticlePublisher {
     });
   }
 
+  /**
+   * Extracts an article meta information in front matter block from text.
+   *
+   * ```js
+   * const text = '---\nid: 0\ntitle: "Lorem ipsum"\n---\nSed sit amet arcu a diam tincidunt porta';
+   * const metaInfo = extractMetaInfo(text);
+   *
+   * console.log(metaInfo.getId()); // 0
+   * console.log(metaInfo.getTitle()); // 'Lorem ipsum'
+   * ```
+   *
+   * @param text - Any text containing front matter block.
+   */
   public static extractMetaInfo(text: string): ArticleMetaInfo {
     const metaInfo: ArticleMetaInfo = new ArticleMetaInfo();
     const metaInfoLines: string[] = text.match(/(-{3})([\s\S]+?)(\1)/)[2]
@@ -85,6 +118,11 @@ class ArticlePublisher {
     return metaInfo;
   }
 
+  /**
+   * Converts markdown article files to HTML files.
+   *
+   * @param id - A specific article ID. If not given, publishes all articles.
+   */
   public static publishArticles(id?: number) {
     const articleFiles: string[] = fs.readdirSync(this.ARTICLE_ORIGIN_PATH)
       .filter((file) => !this.IGNORED_FILES.includes(file));
