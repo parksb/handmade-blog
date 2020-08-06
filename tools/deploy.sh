@@ -6,6 +6,7 @@ DATE=$(date +"%Y-%m-%d %H:%M:%S")
 CYAN="\033[36m"
 GREEN="\033[32m"
 WHITE="\033[0m"
+RED="\033[31m"
 
 echo -e "${CYAN}Deploy to ./${DIST}:\n"
 
@@ -40,7 +41,8 @@ if [[ $(git status -s) == "" ]]; then
   echo -e "${WHITE}> git checkout .gitignore"
   git checkout .gitignore
 else
-  echo "Need clean working directory to deploy."
+  echo -e "\n${RED}Failed to deploy: Need clean working directory to deploy.\n"
+  exit 1
 fi
 
 echo -e "\n${CYAN}Done!"
