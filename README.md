@@ -35,7 +35,10 @@ Handmade Blog is a classic static blog generator for people who want to start a 
     ```json
     {
       "blogTitle": "Lorem Ipsum",
-      "blogSubtitle": "lorem ipsum"
+      "blogSubtitle": "lorem ipsum",
+      "article": {
+        "tableOfContents": true 
+      }
     }
     ```
 
