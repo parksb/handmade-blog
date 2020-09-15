@@ -1,4 +1,7 @@
 {
   "blogTitle": "Lorem Ipsum",
-  "blogSubtitle": "lorem ipsum"
+  "blogSubtitle": "lorem ipsum",
+  "article": {
+    "tableOfContents": true 
+  }
 }

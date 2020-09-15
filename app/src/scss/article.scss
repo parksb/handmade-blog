@@ -212,6 +212,42 @@
     font-size: 11px;
   }
 
+  details {
+    display: inline;
+    margin-bottom: 25px;
+
+    &[open=""] > summary {
+      background-color: black;
+      color: white;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .table-of-contents  {
+    font-size: 15px;
+    margin-bottom: 30px;
+
+    ul {
+      list-style-type: none;
+      counter-reset: item;
+      margin: 0;
+      padding-left: -20px;
+
+      li {
+        margin-top: 5px;
+
+        &:before {
+          content: counters(item, ".") ". ";
+          counter-increment: item
+        }
+      }
+    }
+  }
+
   section {
     margin-bottom: 15px;
 
