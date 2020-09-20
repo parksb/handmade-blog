@@ -24,9 +24,11 @@
       <h1 id="article-title">
         <%- article.title %>
       </h1>
-      <h2 id="article-subtitle">
-        <%- article.subtitle %>
-      </h2>
+      <% if (article.subtitle) { %>
+        <h2 id="article-subtitle">
+          <%- article.subtitle %>
+        </h2>
+      <% } %>
       <time id="article-date">
         <%- article.date %>
       </time>
