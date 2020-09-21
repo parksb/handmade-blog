@@ -10,7 +10,7 @@
   </h1>
 </div>
 
-Handmade Blog is a classic static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and others.
+Handmade Blog is a classic static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
 
 ## Demo: [Here](https://handmade-blog.netlify.com/)
 
@@ -18,62 +18,73 @@ Handmade Blog is a classic static blog generator for people who want to start a 
 
 ## Getting Started
 
-1. Click the 'Use this template' button above the file list to create a new repository. If you want to use github.io domain, have to name the repository `{YOUR_ID}.github.io`.
+1. Click the 'Use this template' button above the file list to create a new repository. If you want to use github.io domain, have to name the repository `{YOUR_ID}.github.io`. (e.g., `betty-grof.github.io`) Don't forget to enable the 'Include all branches' option.
 
-2. Clone this repository, and install node modules.
+    ![Click the 'Use this template' button](https://user-images.githubusercontent.com/6410412/93741226-f524ae00-fc26-11ea-8f88-ba634d2de66b.png)
 
-    ```bash
-    $ git clone https://github.com/{YOUR_ID}/{REPOSITORY_NAME}.git
-    $ cd {REPOSITORY_NAME}
+    ![Name repository to id.github.io, and enable 'Include all branches' option](https://user-images.githubusercontent.com/6410412/93741223-f48c1780-fc26-11ea-9980-8911e531a29c.png)
+
+2. Click the 'Settings' tab in your repository, and set the source branch for GitHub Pages to `gh-pages` branch. GitHub Pages will host your website based on `gh-pages` branch. You'll be able to access the website via `https://{YOUR_ID}.github.io/` in a few minutes.
+
+    ![Click the 'Settings' tab](https://user-images.githubusercontent.com/6410412/93750006-d11c9900-fc35-11ea-9ac1-4f92216f28f9.png)
+
+    ![Set source branch of the github pages to gh-pages branch](https://user-images.githubusercontent.com/6410412/93741218-f2c25400-fc26-11ea-9e30-eddb9a2a3b3f.png)
+
+3. Clone the repository, and install node packages.
+
+    ```shell script
+    $ git clone https://github.com/{YOUR_ID}/{REPOSITORY_NAME}.git # git clone https://github.com/betty-grof/betty-grof.github.io.git
+    $ cd {REPOSITORY_NAME} # cd betty-grof.github.io
     $ npm install
     ```
-
-3. Please create `development` branch and follow [this document](https://help.github.com/en/github/administering-a-repository/setting-the-default-branch) to set the branch to a default. Because GitHub pages hosts the site based on `master` branch. In addition, separating `master` branch and `development` branch is a good practice!
 
 4. Modify `config.json` file in `services` directory to set your blog title and subtitle.
 
     ```json
     {
-      "blogTitle": "Lorem Ipsum",
-      "blogSubtitle": "lorem ipsum",
+      "blogTitle": "Betty Grof",
+      "blogSubtitle": "Oh My Glob",
       "article": {
         "tableOfContents": true 
       }
     }
     ```
 
-5. Start local server at `http://localhost:1234/`. `npm start` script opens local server based on `server` directory. It occurs an error because there aren't published articles and works pages yet.
+5. Start a local server at `http://localhost:1234/`. `npm start` script opens the local server based on `server` directory.
 
-    ```bash
+    ```shell script
     $ npm start
     ```
+   
+    ![The website that is titled 'Betty Grof' at http://localhost:1234/](https://user-images.githubusercontent.com/6410412/93754683-155f6780-fc3d-11ea-99de-92c747c103f9.png)
+    
+6. Commit and push the changes in your working directory to the remote repository.
 
-6. Publish the example articles and works by `npm run publish`. It converts a markdown documents in `_articles` or `_works` directory to HTML files.
+   ```shell script
+   $ git add ./services/config.json
+   $ git commit -m "Set the blog title and subtitle"
+   $ git push origin master
+   ```
 
-    ```bash
-    $ npm run publish article
-    $ npm run publish work
-    ```
+7. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and pushes it to `gh-pages` branch that contains only the files in `dist` directory. GitHub Pages will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` branch automatically.
 
-7. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and pushes it to `master` branch that contains only the files in `dist` directory. GitHub will host live server at `https://{YOUR_ID}.github.io/` based on `master` automatically.
-
-    ```bash
+    ```shell script
     $ npm run deploy
     ```
 
 ## Usage
 
-### Writing and publishing document
+### Write and publish a document
 
 1. Write a document in `_articles` or `_works` directory.
 
-1. Run `npm run publish article` or `npm run publish work` script to convert markdown to HTML.
+1. Run `npm run publish article` or `npm run publish work` script to convert markdown documents to HTML.
 
 1. Preview converted document on the local server using `npm start` script.
 
-1. Run `npm run deploy` to publish the document to live server.
+1. Commit and push the changes to the repository, and run `npm run deploy` to publish the document to live server.
 
-### Changing content of the page
+### Change a page
 
 Modify an ejs template to change the contents of the existing page. For example, if you want to put an image to the landing page, open the `app/templates/index.ejs` file, and add `img` tag to the `main-container` element.
 
@@ -86,13 +97,13 @@ Modify an ejs template to change the contents of the existing page. For example,
 
 Then, run `npm run publish page` script to publish the modified landing page.
 
-```bash
+```shell script
 $ npm run publish page
 ```
 
 Done! You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
 
-### Proejct structure
+### Project structure
 
 * `_articles` - Markdown files for the blog posts.
 * `_works` - Markdown files for the portfolio.
@@ -128,31 +139,31 @@ Starts local development server at http://localhost:1234/.
 
 Converts templates to HTML files.
 
-```bash
+```shell script
 $ npm run publish article
 ```
 
 Converts all articles.
 
-```bash
+```shell script
 $ npm run publish works
 ```
 
 Converts all works.
 
-```bash
+```shell script
 $ npm run publish article 5
 ```
 
 Converts an article which id is 5.
 
-```bash
+```shell script
 $ npm run publish work 3
 ```
 
 Converts a work which id is 3.
 
-```bash
+```shell script
 $ npm run publish page
 ```
 
