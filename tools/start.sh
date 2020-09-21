@@ -25,6 +25,10 @@ echo -e "> [-d server ] || mkdir server\n"
 echo -e "\n${GREEN}Publish the templates...${WHITE}"
 echo "> ts-node ./tools/publish.ts page"
 ts-node ./tools/publish.ts page
+echo "> ts-node ./tools/publish.ts article"
+ts-node ./tools/publish.ts article
+echo "> ts-node ./tools/publish.ts work"
+ts-node ./tools/publish.ts work
 
 echo -e "\n${GREEN}Reset server directory...${WHITE}"
 echo "> rm -r ./server/*"

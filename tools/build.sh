@@ -26,6 +26,10 @@ echo -e "> [-d ${DIST} ] || mkdir ${DIST}\n"
 echo -e "\n${GREEN}Publish the templates...${WHITE}"
 echo "> ts-node ./tools/publish.ts page"
 ts-node ./tools/publish.ts page
+echo "> ts-node ./tools/publish.ts article"
+ts-node ./tools/publish.ts article
+echo "> ts-node ./tools/publish.ts work"
+ts-node ./tools/publish.ts work
 
 echo -e "\n${GREEN}Reset distribution directory...${WHITE}"
 echo "> rm -r ${DIST}/*"
