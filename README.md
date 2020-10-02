@@ -10,6 +10,15 @@
   </h1>
 </div>
 
+<details>
+<summary>Click here to read this documentation in other languages</summary>
+List of available languages :
+<br>
+
+  * English (default)
+  * [Indonesian](https://github.com/parksb/handmade-blog/blob/parksb/doc-translation/README-IND.md)
+</details><br>
+
 Handmade Blog is a classic static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
 
 ## Demo: [Here](https://handmade-blog.netlify.com/)
@@ -120,6 +129,7 @@ Done! You can change not only the landing page but any pages like this way. (You
   * `templates` - HTML files used as ejs template. `publish` script converts a markdown file to HTML based on templates under this directory.
 * `dist` - Files compiled by `build` script. `deploy` script deploys a website to GitHub pages based on this directory. Do not change the files under this directory directly.
 * `server` - Files compiled by `build` script. `start` script opens local server based on this directory. Do not change the files under this directory directly.
+* `doc-translation` - The folder contains documentation in several languages written in markdown format.
 * `services` - Source code implementing `publish` script.
   * `classes`
   * `models`
