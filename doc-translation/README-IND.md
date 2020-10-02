@@ -183,4 +183,4 @@ Build dan deploy file.
 
 ## Lisensi
 
-Proyek ini berlisensi di bawah Lisensi MIT - lihat file [LISENSI] (LISENSI) untuk detailnya.
+Proyek ini berlisensi di bawah Lisensi MIT - lihat file [LISENSI](LISENSI) untuk detailnya.
