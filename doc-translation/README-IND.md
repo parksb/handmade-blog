@@ -120,6 +120,7 @@ Selesai! Anda tidak hanya dapat mengubah landing page tetapi page apa pun sepert
   * `templates` - File HTML digunakan sebagai template ejs. Script `publish` mengonversi file markdown menjadi HTML berdasarkan template di bawah direktori ini.
 * `dist` - File dikompilasi oleh script `build`. script `deploy` mendeploy situs web ke GitHub Pages berdasarkan direktori ini. Jangan mengubah file di bawah direktori ini secara langsung.
 * `server` - File dikompilasi oleh script `build`. Script `start` membuka server lokal berdasarkan direktori ini. Jangan mengubah file di bawah direktori ini secara langsung.
+* `doc-translation` - Folder berisi dokumentasi dalam beberapa bahasa yang ditulis dalam format markdown.
 * `services` - Source code menerapkan script `publish`.
   * `classes`
   * `models`
