@@ -16,7 +16,7 @@ List of available languages :
 <br>
 
   * English (default)
-  * [Indonesian](https://github.com/parksb/handmade-blog/blob/parksb/doc-translation/README-IND.md)
+  * [Indonesian](https://github.com/parksb/handmade-blog/blob/master/doc-translation/README-IND.md)
 </details><br>
 
 Handmade Blog is a classic static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
