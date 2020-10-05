@@ -8,18 +8,11 @@
   [![build](https://img.shields.io/github/workflow/status/ParkSB/handmade-blog/Node%20CI/master?style=flat-square)](https://github.com/ParkSB/handmade-blog/actions?query=workflow%3A%22Node+CI%22) ![node](https://img.shields.io/badge/node-%3E%3D%2010.0-brightgreen?style=flat-square) [![demo](https://img.shields.io/netlify/3f01acb3-1107-470a-914f-90d100b87d85?label=demo&style=flat-square)](https://handmade-blog.netlify.com/) [![license](https://img.shields.io/github/license/ParkSB/handmade-blog?style=flat-square)](LICENSE)
 
   </h1>
+  
+  <strong>Read this document in another language:</strong> [🇰🇷](README-KR.md) [🇮🇩](README-ID.md)
 </div>
 
-<details>
-<summary>Click here to read this documentation in other languages</summary>
-List of available languages :
-<br>
-
-  * English (default)
-  * [Indonesian](README-IND.md)
-</details><br>
-
-Handmade Blog is a classic static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
+Handmade Blog is a lightweight static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
 
 ## Demo: [Here](https://handmade-blog.netlify.com/)
 
@@ -75,7 +68,7 @@ Handmade Blog is a classic static blog generator for people who want to start a 
    $ git push origin master
    ```
 
-7. Run `deploy` script if you're ready to host a live server. This script builds local files to `dist` directory and pushes it to `gh-pages` branch that contains only the files in `dist` directory. GitHub Pages will host live server at `https://{YOUR_ID}.github.io/` based on `gh-pages` branch automatically.
+7. Run `deploy` script if you're ready to host the website. This script builds local files to `dist` directory and pushes it to `gh-pages` branch that contains only the files in `dist` directory. GitHub Pages will host your website at `https://{YOUR_ID}.github.io/` based on `gh-pages` branch automatically.
 
     ```shell script
     $ npm run deploy
@@ -91,7 +84,7 @@ Handmade Blog is a classic static blog generator for people who want to start a 
 
 1. Preview converted document on the local server using `npm start` script.
 
-1. Commit and push the changes to the repository, and run `npm run deploy` to publish the document to live server.
+1. Commit and push the changes to the repository, and run `npm run deploy` to deploy.
 
 ### Change a page
 
@@ -104,13 +97,14 @@ Modify an ejs template to change the contents of the existing page. For example,
 </main>
 ```
 
-Then, run `npm run publish page` script to publish the modified landing page.
+Then, run `npm run publish page` script to publish the modified landing page and preview changes on the local server using `npm start` script.
 
 ```shell script
 $ npm run publish page
+$ npm start
 ```
 
-Done! You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
+If you're ready to deploy, run `npm run deploy` script. You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
 
 ### Project structure
 
@@ -126,7 +120,7 @@ Done! You can change not only the landing page but any pages like this way. (You
     * `scss`
     * `ts`
   * `static` - Any static files that aren't compiled by `build` script like `robots.txt`, `sitemap.xml`, or SEO files. `build` script copies all files under this directory to `dist` directory. 
-  * `templates` - HTML files used as ejs template. `publish` script converts a markdown file to HTML based on templates under this directory.
+  * `templates` - EJS template files. `publish` script converts templates under this directory to HTML files.
 * `dist` - Files compiled by `build` script. `deploy` script deploys a website to GitHub pages based on this directory. Do not change the files under this directory directly.
 * `server` - Files compiled by `build` script. `start` script opens local server based on this directory. Do not change the files under this directory directly.
 * `services` - Source code implementing `publish` script.
