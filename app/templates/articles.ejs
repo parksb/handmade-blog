@@ -21,7 +21,7 @@
     <section id="articles-container">
       <ul>
         <% articles.reverse().map((article) => { %>
-          <li id="articles-list-item">
+          <li class="articles-list-item">
             <a href="./article/<%= article.id %>.html">
               <h1><%= article.title %></h1>
               <% if (article.subtitle) { %>
