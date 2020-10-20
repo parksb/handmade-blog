@@ -9,7 +9,7 @@
 
   </h1>
 
-  <strong>이 문서를 다른 언어로 읽어보세요:</strong> [🇰🇷](README-KR.md) [🇮🇩](README-ID.md)
+  <strong>이 문서를 다른 언어로 읽어보세요:</strong> [🇰🇷](README-KR.md) [🇮🇩](README-ID.md) [🇮🇹](README-IT.md)
 </div>
 
 핸드메이드 블로그(Handmade Blog)는 블로그를 빠르게 시작하고 싶어하는 사람들을 위한 가벼운 정적 블로그 생성기입니다. 블로그 포스트를 위한 아티클 타입 문서와 포트폴리오를 위한 작업 타입 문서, 코드 하이라이트, [KaTeX](https://katex.org/) 문법, 각주, 그리고 더 많은 것들을 지원합니다.
