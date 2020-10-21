@@ -128,6 +128,7 @@ Selesai! Anda tidak hanya dapat mengubah landing page tetapi page apa pun sepert
 ## Showcase (Contoh kasus)
 
 * parksb.github.io: https://github.com/parksb/parksb.github.io
+* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
 
 ## Script yang Tersedia
 

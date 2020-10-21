@@ -133,6 +133,7 @@ Se você estiver pronto para o deploy, execute o script `npm run deploy`. Você 
 ## Casos de uso
 
 * parksb.github.io: https://github.com/parksb/parksb.github.io
+* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
 
 ## Scripts disponíveis
 

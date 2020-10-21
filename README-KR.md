@@ -131,6 +131,7 @@ $ npm start
 ## 예시
 
 * parksb.github.io: https://github.com/parksb/parksb.github.io
+* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
 
 ## 사용 가능한 스크립트
 
