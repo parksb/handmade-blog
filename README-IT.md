@@ -9,7 +9,7 @@
 
   </h1>
   
-  <strong>Leggi questo documento in un altro linguaggio:</strong> [:us:](README.md) [🇰🇷](README-KR.md) [🇮🇩](README-ID.md) [:brazil:](README-PT-BR.md)
+  <strong>Leggi questo documento in un altro linguaggio:</strong> [:us:](README.md) [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md)
 </div>
 
 Handmade Blog è un leggero generatore di blog statici per persone che vogliono aprire un blog rapidamente. Supporta documenti di tipo "article" per i post del blog, documenti di tipo "work" per il portfolio, evidenziazione codice, [KaTeX](https://katex.org/) sintassi, note a piè di pagina, e altro.
