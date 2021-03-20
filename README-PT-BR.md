@@ -12,7 +12,7 @@
   <strong>Leia essa documentação em outra língua:</strong> [:us:](README.md) [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:it:](README-IT.md)
 </div>
 
-Handmade Blog é um gerador de blog estático leve para pessoas que querem começar um blog rapidamente. Ele suporta documento de tipo **artigo** para postagem de blog, documento de tipo **trabalho** para portifólio, destaques de código, sintaxe [KaTeX](https://katex.org/), notas de rodápé e mais.
+Handmade Blog é um leve gerador de blog estático para pessoas que querem começar um blog rapidamente. Ele suporta documentos do tipo **artigo** para postagem de blog, documento do tipo **trabalho** para portifólio, destaques de código, sintaxe [KaTeX](https://katex.org/), notas de rodápé e mais.
 
 ## Demo: [Aqui](https://handmade-blog.netlify.com/)
 
@@ -88,7 +88,7 @@ Handmade Blog é um gerador de blog estático leve para pessoas que querem come�
 
 ### Modifique uma página
 
-Modifique um template ejs para mudar o conteúdo de uma página existente. Por examplo, se você deseja colocar uma imagem na landing page, abra o arquivo `app/templates/index.ejs` e adicione a tag `img` no elemento `main-container`.
+Modifique um template ejs para mudar o conteúdo de uma página existente. Por exemplo, se você deseja colocar uma imagem na landing page, abra o arquivo `app/templates/index.ejs` e adicione a tag `img` no elemento `main-container`.
 
 ```html
 <main id="main-container">
@@ -104,16 +104,14 @@ $ npm run publish page
 $ npm start
 ```
 
-If you're ready to deploy, run `npm run deploy` script. You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
-
-Se você estiver pronto para o deploy, execute o script `npm run deploy`. Você pode mudar não só a landing page mas qualquer página desta forma. (Talvez você precise entender a estrutura do projeto.)
+Se você estiver pronto para o deploy, execute o script `npm run deploy`. Você pode mudar não só alterar a landing page mas qualquer página desta forma. (Talvez você precise entender a estrutura do projeto.)
 
 ### Estrutura do projeto
 
 * `_articles` - Arquivos Markdown para as publicações do blog.
 * `_works` - Arquivos Markdown para o portfolio.
 * `app`
-  * `assets` - Qualquer arquvio a ser importado por arquivos HTML tal como imagens, fontes, etc. 
+  * `assets` - Qualquer arquivo a ser importado por arquivos HTML tal como imagens, fontes, etc. 
   * `public` - Arquivos HTML gerado pelo script `publish`. Os diretórios `server` e `dist` são baseados neste diretório. Não altere os arquivos neste diretório diretamente.
     * `article` - Arquivos HTML convertidos do diretório `_articles`.
     * `work` - Arquivos HTML convertidos do diretório `_works`.
@@ -139,7 +137,7 @@ Se você estiver pronto para o deploy, execute o script `npm run deploy`. Você 
 
 ### `npm start`
 
-Incia um servidor de desenvolvimento local http://localhost:1234/.
+Inicia um servidor de desenvolvimento local http://localhost:1234/.
 
 ### `npm run publish`
 
