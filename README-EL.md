@@ -9,7 +9,7 @@ Handmade Blog
 
   </h1>
   
-  <strong>Διαβάστε το παρακάτω αρχείο σε διαφορετική γλώσσα:</strong> [:us:](README.md) [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md) [:it:](README-IT.md) [:malaysia:](README-MS.md)
+  <strong>Διαβάστε το παρακάτω αρχείο σε διαφορετική γλώσσα:</strong> [:us:](README.md) [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md) [:it:](README-IT.md) [:malaysia:](README-MS.md) [:greece:](README-EL.md)
 </div>
 
 To Handmade Blog είναι ένα ελαφρύ πρόγραμμα παραγωγής ενός στατικού blog, για ανθρώπους που θέλουν να ξεκινήσουν ένα blog γρήγορα. Υποστηρίζει αρχεία τύπου άρθρο(article) για δημοσιεύσεις blog, αρχεία τύπου δουλειάς(work) για portfolio, επισημάνσεις κώδικα , σύνταξη [KaTeX](https://katex.org/), υποσημειώσεις, και πολλά άλλα.
