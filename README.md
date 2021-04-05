@@ -9,7 +9,7 @@
 
   </h1>
   
-  <strong>Read this document in another language:</strong> [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md) [:it:](README-IT.md) [:malaysia:](README-MS.md)
+  <strong>Read this document in another language:</strong> [:kr:](README-KO.md) [:indonesia:](README-ID.md) [:brazil:](README-PT-BR.md) [:it:](README-IT.md) [:malaysia:](README-MS.md) [:greece:](README-EL.md)
 </div>
 
 Handmade Blog is a lightweight static blog generator for people who want to start a blog quickly. It supports article type document for a blog post, work type document for portfolio, code highlights, [KaTeX](https://katex.org/) syntax, footnotes, and more.
