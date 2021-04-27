@@ -40,7 +40,7 @@ echo "> cp -r ./app/static/* ${DIST}/"
 cp -r ./app/static/* $DIST/
 
 echo -e "\n${GREEN}Run parcel...${WHITE}"
-echo -e "> parcel build ./app/public/index.html -d ${DIST}\n"
-parcel build ./app/public/index.html -d $DIST
+echo -e "> ./node_modules/.bin/parcel build ./app/public/index.html -d ${DIST}\n"
+./node_modules/.bin/parcel build ./app/public/index.html -d $DIST
 
 echo -e "\n${CYAN}Done!${WHITE}"
