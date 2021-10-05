@@ -9,7 +9,7 @@
 
   </h1>
   
-  <strong>Baca dokumen ini dalam bahasa lain:</strong> [🇰🇷](README-KR.md) [🇮🇩](README-ID.md) [:brazil:](README-PT-BR.md) [🇮🇹](README-IT.md) [:greece:](README-EL.md)
+  <strong>Baca dokumen ini dalam bahasa lain:</strong> [🇰🇷](README-KR.md) [🇮🇩](README-ID.md) [:brazil:](README-PT-BR.md) [🇮🇹](README-IT.md) [:greece:](README-EL.md) [:vietnam:](REAME-VI.md)
 </div>
 
 Handmade Blog adalah penjana blog statik ringan untuk orang yang ingin memulakan blog dengan cepat. Ia menyokong dokumen jenis artikel untuk catatan blog, dokumen jenis kerja untuk portfolio, sorotan kod, sintaks [KaTeX](https://katex.org/), nota kaki, dan banyak lagi.
