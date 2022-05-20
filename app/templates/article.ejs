@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <title>
-    <%- article.title %>
-  </title>
+  <title><%- article.title %></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../../src/scss/init.scss">
-  <link rel="stylesheet" href="../../src/scss/article.scss">
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="preload" href="../styles/article.css" as="style">
+  <link rel="stylesheet" href="../styles/article.css">
 </head>
-
 <body>
   <header id="top-container" role="navigation">
+    <%- include(process.cwd() + '/app/templates/navigation'); %>
   </header>
-
   <main id="main-container">
     <article id="article-container">
       <h1 id="article-title">
@@ -32,11 +28,9 @@
       <time id="article-date">
         <%- article.date %>
       </time>
-
       <section id="article-content-container">
         <%- article.content %>
       </section>
-
       <section id="article-navigation">
         <% if (nextArticle) { %>
           <div class="article-navigation-item article-navigation-next">
@@ -61,7 +55,6 @@
           </div>
         <% } %>
       </section>
-
       <section id="article-list-button-container">
         <a href="/articles.html">
           <div id="article-list-button">📚</div>
@@ -69,6 +62,5 @@
       </section>
     </article>
   </main>
-
-  <script defer src="../../src/ts/init.ts"></script>
 </body>
+</html>

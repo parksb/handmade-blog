@@ -4,50 +4,51 @@
   "description": "A static blog generator for people who want to start a blog quickly",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ParkSB/handmade-blog.git"
+    "url": "https://github.com/parksb/handmade-blog.git"
   },
   "main": "index.js",
   "scripts": {
-    "start": "bash ./tools/start.sh",
+    "start": "http-server ./dist",
     "build": "bash ./tools/build.sh",
-    "watch": "ts-node ./tools/watch.ts",
     "publish": "ts-node ./tools/publish.ts",
-    "deploy": "bash ./tools/deploy.sh",
-    "test": "mocha -r ts-node/register ./services/tests/**/*.test.ts"
+    "deploy": "bash ./tools/deploy.sh"
   },
-  "author": "",
+  "author": "parksb",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parksb/handmade-blog/issues"
+  },
+  "homepage": "https://github.com/parksb/handmade-blog#readme",
   "dependencies": {
-    "ejs": "^2.6.1",
-    "highlight.js": "^10.4.1",
-    "katex": "^0.10.2",
-    "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.3.0",
-    "markdown-it-container": "^3.0.0",
-    "markdown-it-footnote": "^3.0.1",
-    "markdown-it-table-of-contents": "^0.4.4",
-    "markdown-it-texmath": "^0.5.5"
+    "dayjs": "^1.11",
+    "highlight.js": "^11.5",
+    "katex": "^0.15",
+    "mermaid": "^9.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@types/chai": "^4.2.7",
-    "@types/ejs": "^2.6.3",
-    "@types/highlight.js": "^9.12.3",
-    "@types/markdown-it": "0.0.7",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.11.3",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
-    "chai": "^4.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-typescript": "^6.3.1",
-    "eslint-plugin-import": "^2.19.1",
-    "mocha": "^8.0.1",
-    "node-sass": "^4.14.1",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.24.0",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
+    "@types/ejs": "^3.1",
+    "@types/highlight.js": "^9.12",
+    "@types/markdown-it": "12.2",
+    "@types/node": "^17.0",
+    "@typescript-eslint/eslint-plugin": "^5.23",
+    "@typescript-eslint/parser": "^5.23",
+    "clean-css-cli": "^5.6.0",
+    "ejs": "^3.1",
+    "eslint": "^8.15",
+    "eslint-config-airbnb-typescript": "^17.0",
+    "eslint-plugin-import": "^2.26",
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.0",
+    "markdown-it": "^13.0",
+    "markdown-it-anchor": "^8.6",
+    "markdown-it-container": "^3.0",
+    "markdown-it-footnote": "^3.0",
+    "markdown-it-image-lazy-loading": "^1.2",
+    "markdown-it-inline-comments": "^1.0",
+    "markdown-it-mermaid": "^0.2",
+    "markdown-it-table-of-contents": "^0.6",
+    "markdown-it-texmath": "^0.9",
+    "ts-node": "^10.7",
+    "typescript": "^4.6"
   }
 }

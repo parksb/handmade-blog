@@ -14,9 +14,6 @@ echo -e "${GREEN}Run build script...${WHITE}"
 echo -e "${WHITE}> ./tools/build.sh"
 ./tools/build.sh
 
-echo -e "${WHITE}> git checkout ./app/static/sitemap.xml"
-git checkout ./app/static/sitemap.xml
-
 if [[ $(git status -s) == "" ]]; then
   echo -e "${GREEN}Modify gitignore list temporarily...${WHITE}"
 
