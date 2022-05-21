@@ -143,6 +143,7 @@
 #article-content-container img {
   max-width: 100%;
   margin-top: 10px;
+  height: auto;
 }
 
 #article-content-container ul,

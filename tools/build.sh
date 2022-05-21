@@ -39,6 +39,8 @@ echo -e "> mkdir ${DIST}/styles\n"
 mkdir $DIST/styles
 echo -e "> mkdir ${DIST}/assets\n"
 mkdir $DIST/assets
+echo -e "> mkdir ${DIST}/_images\n"
+mkdir $DIST/_images
 
 echo -e "\n${GREEN}Copy files to distribution directory...${WHITE}"
 echo "> cp -r ./app/static/* ${DIST}/"
@@ -49,6 +51,8 @@ echo "> cp -r ./app/styles/* ${DIST}/styles/"
 cp -r ./app/styles/* $DIST/styles/
 echo "> cp -r ./app/assets/* ${DIST}/assets/"
 cp -r ./app/assets/* $DIST/assets/
+echo "> cp -r ./_images/* ${DIST}/_images/"
+cp -r ./_images/* $DIST/_images/
 
 echo -e "\n${GREEN}Minify css files...${WHITE}"
 cleancss --batch --batch-suffix '' $DIST/styles/*.css

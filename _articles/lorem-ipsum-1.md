@@ -12,7 +12,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet arcu a dia
 
 Pellentesque eu erat vitae metus dignissim tempus. Duis malesuada magna eu risus fermentum consectetur. Sed in ante consequat urna ultricies dapibus ac non diam.[^1]
 
-![dummy image](https://dummyimage.com/900x700/efefef/000000)
+![dummy image](/_images/800x600.png)
 
 Suspendisse porttitor pellentesque ante, dapibus ullamcorper risus commodo eu. Duis sapien mi, mollis vel odio nec, iaculis pharetra nunc. Aliquam quam nisi, cursus `pharetra` feugiat nec, tristique quis libero. Ut blandit sit amet lacus eget elementum. Fusce elit nisi, feugiat ornare commodo at, varius sed augue.
 

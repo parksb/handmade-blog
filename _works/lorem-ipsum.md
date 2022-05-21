@@ -1,12 +1,12 @@
 ---
 title: "Lorem Ipsum"
 subtitle: "Sed sit amet arcu a diam tincidunt porta"
-thumbnail: "https://dummyimage.com/900x700/efefef/0000000"
+thumbnail: "/_images/800x600.png"
 ---
 
-![](https://dummyimage.com/900x700/efefef/000000)
+![dummy image](/_images/800x600.png)
 
-![](https://dummyimage.com/900x400/efefef/000000)
+![dummy image](/_images/800x600.png)
 
 _**Lorem Ipsum (2019)**_
 

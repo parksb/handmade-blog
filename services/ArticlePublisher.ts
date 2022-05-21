@@ -23,10 +23,10 @@ import Article from './classes/Article';
 import ArticleModel from './models/ArticleModel';
 
 class ArticlePublisher {
-  // A path of the directory containing the markdown article files.
+  // A path of the directory containing markdown article files.
   static ARTICLE_ORIGIN_PATH: string = path.join(__dirname, '../_articles');
 
-  // A path of the directory containing the HTML article files.
+  // A path of the directory containing HTML article files.
   static ARTICLE_DIST_PATH: string = path.join(__dirname, '../app/public/article');
 
   // A path of the article template file.
@@ -70,7 +70,10 @@ class ArticlePublisher {
         return '</details>\n';
       },
     })
-    .use(mdLazyImage, { decoding: true });
+    .use(mdLazyImage, {
+      decoding: true,
+      image_size: true,
+    });
 
   /**
    * Extracts content excluding front matter block.
