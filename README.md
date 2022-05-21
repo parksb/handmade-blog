@@ -18,6 +18,16 @@ Handmade Blog is a lightweight static blog generator for people who want to star
 
 ![Article page preview](https://user-images.githubusercontent.com/6410412/74097056-be43d100-4b4a-11ea-806b-7bd263d7f623.png)
 
+## Lighthouse results
+
+**[article/0.html](https://handmade-blog.vercel.app/article/0.html) on mobile**
+
+![Performance 94, Accessibility 100, Best Practices 100, SEO 92, PWA N/A](https://user-images.githubusercontent.com/6410412/169649124-32f4bd18-f3ff-418d-8bb8-61ec6105877a.png)
+
+**[article/0.html](https://handmade-blog.vercel.app/article/0.html) on desktop**
+
+![Performance 99, Accessibility 100, Best Practices 92, SEO 91, PWA N/A](https://user-images.githubusercontent.com/6410412/169649130-7f0a82e1-21ac-4c7d-9efb-9f9908865b63.png)
+
 ## Getting Started
 
 1. Click the 'Use this template' button above the file list to create a new repository. If you want to use github.io domain, have to name the repository `{YOUR_ID}.github.io`. (e.g., `betty-grof.github.io`) Don't forget to enable the 'Include all branches' option.
