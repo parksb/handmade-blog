@@ -73,6 +73,7 @@ class ArticlePublisher {
     .use(mdLazyImage, {
       decoding: true,
       image_size: true,
+      base_path: path.join(__dirname, '../'),
     });
 
   /**
