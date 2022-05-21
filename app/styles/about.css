@@ -7,8 +7,7 @@
 }
 
 #about-container ul {
-  list-style: none;
-  list-style-position: inside;
+  list-style: none inside none;
 }
 
 #about-container ul li {
