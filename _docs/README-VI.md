@@ -16,6 +16,16 @@ Handmade Blog là một trình nhẹ tạo blog tĩnh cho những người muố
 
 ![Article page preview](https://user-images.githubusercontent.com/6410412/74097056-be43d100-4b4a-11ea-806b-7bd263d7f623.png)
 
+## Kết quả Lighthouse
+
+**[article/0.html](https://handmade-blog.vercel.app/article/0.html) trên điện thoại**
+
+![Performance 94, Accessibility 100, Best Practices 100, SEO 92, PWA N/A](https://user-images.githubusercontent.com/6410412/169649124-32f4bd18-f3ff-418d-8bb8-61ec6105877a.png)
+
+**[article/0.html](https://handmade-blog.vercel.app/article/0.html) trên máy tính**
+
+![Performance 99, Accessibility 100, Best Practices 92, SEO 91, PWA N/A](https://user-images.githubusercontent.com/6410412/169649130-7f0a82e1-21ac-4c7d-9efb-9f9908865b63.png)
+
 ## Bắt Đầu
 
 1. Nhấp vào nút 'Use this template' phía trên danh sách tệp để tạo một kho lưu trữ mới. Nếu bạn muốn sử dụng miền github.io, phải đặt tên cho kho lưu trữ là `{YOUR_ID} .github.io`. (ví dụ: `betty-grof.github.io`) Đừng quên bật tùy chọn 'Include all branches' .
@@ -38,21 +48,29 @@ Handmade Blog là một trình nhẹ tạo blog tĩnh cho những người muố
     $ npm install
     ```
 
-4. Sửa đổi tệp `config.json` trong thư mục `services` để đặt tiêu đề blog và phụ đề của bạn.
+4. Thay đổi thông tin như tiêu đề trong điều hướng (trong `app/templates/navigations.ejs`), và chạy lệnh `npm run build`.
 
-    ```json
-    {
-      "blogTitle": "Betty Grof",
-      "blogSubtitle": "Oh My Glob",
-      "article": {
-        "tableOfContents": true 
-      }
-    }
+    ```html
+    <nav>
+      <a class="logo-link" href="/">
+        <h1>CUSTOMIZED BLOG TITLE</h1>
+        <span>customized blog subtitle</span>
+      </a>
+      <small>
+        <a id="about" class="info-link" href="/about.html">👀About</a> /
+        <a id="works" class="info-link" href="/works.html">🔥Works</a> /
+        <a id="articles" class="info-link" href="/articles.html">📚Articles</a>
+      </small>
+    </nav>
+    ```
+    ``` shell script
+    $ npm run build
     ```
 
-5. Khởi động máy chủ cục bộ tại `http://localhost:1234/`. Chạy lệnh `npm start` mở máy chủ cục bộ dựa trên thư mục` server`.
+5. Chạy lệnh  `npm start` để bắt đầu một server tại địa chỉ `http://localhost:8080/`. Server này dựa trên thư mục `dist`.
 
     ```shell script
+    $ npm run build
     $ npm start
     ```
    
@@ -61,8 +79,8 @@ Handmade Blog là một trình nhẹ tạo blog tĩnh cho những người muố
 6. Commit và push các thay đổi trong thư mục làm việc của bạn vào kho lưu trữ từ xa.
 
    ```shell script
-   $ git add ./services/config.json
-   $ git commit -m "Set the blog title and subtitle"
+   $ git add ./app/templates/navigations.ejs
+   $ git commit -m "Customize the blog title and subtitle"
    $ git push origin master
    ```
 
@@ -113,10 +131,7 @@ Nếu bạn đã sẵn sàng triển khai, chạy `npm run deploy`. Bạn có kh
   * `public` - Các tệp HTML được tạo bởi tập lệnh `publish`. Thư mục `server` và` dist` dựa trên thư mục này. Không thay đổi trực tiếp các tệp trong thư mục này.
     * `article` - Các tệp HTML được chuyển đổi từ thư mục `_articles`.
     * `work` - Các tệp HTML được chuyển đổi từ thư mục `_works`.
-  * `src` - Mã nguồn được nhập bởi các tệp HTML.
-    * `css` - Các tệp CSS được tạo bởi tập lệnh `build`.
-    * `scss`
-    * `ts`
+  * `styles` - Tệp CSS nguồn được dùng trong HTML.
   * `static` - Bất kỳ tệp tĩnh nào không được biên dịch bởi tập lệnh `build` như `robots.txt`, `sitemap.xml` hoặc tệp SEO. Tập lệnh `build` sao chép tất cả các tệp trong thư mục này vào thư mục `dist`.
   * `templates` - Tệp EJS mẫu. Tập lệnh `publish` chuyển đổi các mẫu trong thư mục này thành các tệp HTML.
 * `dist` - Các tệp được biên dịch bởi tập lệnh `build`. Tập lệnh `deploy` triển khai một trang web tới các trang GitHub dựa trên thư mục này. Không thay đổi trực tiếp các tệp trong thư mục này.
@@ -126,7 +141,7 @@ Nếu bạn đã sẵn sàng triển khai, chạy `npm run deploy`. Bạn có kh
   * `models`
 * `tools` - Mã nguồn triển khai các tập lệnh npm khác nhau.
 
-## Trưng bày
+## Trang mẫu
 
 * parksb.github.io: https://github.com/parksb/parksb.github.io
 * betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
