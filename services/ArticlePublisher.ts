@@ -194,7 +194,8 @@ class ArticlePublisher {
       return article;
     });
 
-    PagePublisher.publishArticles(distArticles);
+    const sortedDistArticles: ArticleModel[] = distArticles.sort((a, b) => a.id - b.id);
+    PagePublisher.publishArticles(sortedDistArticles);
   }
 }
 
