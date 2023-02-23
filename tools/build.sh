@@ -60,5 +60,11 @@ cleancss --batch --batch-suffix '' $DIST/styles/*.css
 echo -e "\n${GREEN}Minify html files...${WHITE}"
 html-minifier --input-dir $DIST --output-dir $DIST --file-ext html --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype
 
+
+if test -f "./CNAME"; then
+    echo -e "> Found a CNAME File! Bringing the CNAME over"
+    cp -r ./CNAME ${DIST}/CNAME
+fi
+
 echo -e "\n${CYAN}Done!${WHITE}"
 

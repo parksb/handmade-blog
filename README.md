@@ -199,6 +199,12 @@ Builds files with parcel bundler.
 
 Builds and deploys the files.
 
+## Adding a custom domain 
+
+Create a CNAME file in the root directory. The build process will automatically pick up on the CNAME for you and you can serve your blog from your custom domain.
+
+To find out more about how Github manages CNAMEs, check out the [docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
