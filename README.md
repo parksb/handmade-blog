@@ -18,6 +18,11 @@ Handmade Blog is a lightweight static blog generator for people who want to star
 
 ![Article page preview](https://user-images.githubusercontent.com/6410412/74097056-be43d100-4b4a-11ea-806b-7bd263d7f623.png)
 
+## Showcase
+
+* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
+* parksb.github.io: https://github.com/parksb/parksb.github.io
+
 ## Lighthouse results
 
 **[article/0.html](https://handmade-blog.vercel.app/article/0.html) on mobile**
@@ -94,20 +99,20 @@ Handmade Blog is a lightweight static blog generator for people who want to star
 
 ## Usage
 
-### Live reload
+### Live reloading
 
 1. Run `npm run watch` to track changes in real time.
 1. Run `npm start` to start local server. (`npm run watch` must still be running in the background or other tab, or other session.)
 1. Now, it is built automatically whenever you make changes to any files in `app/templates`, `app/styles`, and `_articles` directories.
 
-### Write and publish a document
+### Writing and publishing document
 
 1. Write a document in `_articles` or `_works` directory.
 1. Run `npm run publish article` or `npm run publish work` script to convert markdown documents to HTML.
 1. Preview converted document on the local server using `npm start` script.
 1. Commit and push the changes to the repository, and run `npm run deploy` to deploy.
 
-### Edit a page
+### Editing template
 
 Modify an ejs template to change the contents of the existing page. For example, if you want to put an image to the landing page, open the `app/templates/index.ejs` file, and add `img` tag to the `main-container` element.
 
@@ -127,7 +132,13 @@ $ npm start
 
 If you're ready to deploy, run `npm run deploy` script. You can change not only the landing page but any pages like this way. (You may need to understand the project structure.)
 
-### Project structure
+### Adding a custom domain
+
+Create a CNAME file in the root directory. The build process will automatically pick up on the CNAME for you and you can serve your blog from your custom domain.
+
+To find out more about how Github manages CNAMEs, check out the [docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
+## Project structure
 
 * `_articles` - Markdown files for the blog posts.
 * `_works` - Markdown files for the portfolio.
@@ -144,11 +155,6 @@ If you're ready to deploy, run `npm run deploy` script. You can change not only 
   * `classes`
   * `models`
 * `tools` - Source code implementing various npm scripts.
-
-## Showcase
-
-* parksb.github.io: https://github.com/parksb/parksb.github.io
-* betty-grof.github.io: https://github.com/betty-grof/betty-grof.github.io
 
 ## Available Scripts
 
@@ -201,12 +207,6 @@ Builds files with parcel bundler.
 ### `npm run deploy`
 
 Builds and deploys the files.
-
-## Adding a custom domain
-
-Create a CNAME file in the root directory. The build process will automatically pick up on the CNAME for you and you can serve your blog from your custom domain.
-
-To find out more about how Github manages CNAMEs, check out the [docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
 ## License
 
