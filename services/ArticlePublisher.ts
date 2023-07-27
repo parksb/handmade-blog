@@ -97,7 +97,7 @@ class ArticlePublisher {
    *
    * @param filename - An article filename.
    */
-  private static getArticleByFilename(filename: string) {
+  public static getArticleByFilename(filename: string) {
     const mdContent = String(fs.readFileSync(`${this.ARTICLE_ORIGIN_PATH}/${filename}`));
     const mdContentWithToc = `::: toggle(Table of Contents)\n[[toc]]\n:::\n${mdContent}`;
     const htmlContent: string = this.md.render(this.extractContent(mdContentWithToc));

@@ -94,17 +94,20 @@ Handmade Blog is a lightweight static blog generator for people who want to star
 
 ## Usage
 
+### Live reload
+
+1. Run `npm run watch` to track changes in real time.
+1. Run `npm start` to start local server. (`npm run watch` must still be running in the background or other tab, or other session.)
+1. Now, it is built automatically whenever you make changes to any files in `app/templates`, `app/styles`, and `_articles` directories.
+
 ### Write and publish a document
 
 1. Write a document in `_articles` or `_works` directory.
-
 1. Run `npm run publish article` or `npm run publish work` script to convert markdown documents to HTML.
-
 1. Preview converted document on the local server using `npm start` script.
-
 1. Commit and push the changes to the repository, and run `npm run deploy` to deploy.
 
-### Change a page
+### Edit a page
 
 Modify an ejs template to change the contents of the existing page. For example, if you want to put an image to the landing page, open the `app/templates/index.ejs` file, and add `img` tag to the `main-container` element.
 
@@ -189,7 +192,7 @@ Converts all pages.
 
 ### `npm run watch`
 
-Rebuilds template files in `templates` directory and markdown files in `_articles` directory automatically whenever the files are modified.
+Rebuilds template files in `templates` directory, css files in `styles` directory and markdown files in `_articles` directory automatically whenever the files are modified.
 
 ### `npm run build`
 
@@ -199,7 +202,7 @@ Builds files with parcel bundler.
 
 Builds and deploys the files.
 
-## Adding a custom domain 
+## Adding a custom domain
 
 Create a CNAME file in the root directory. The build process will automatically pick up on the CNAME for you and you can serve your blog from your custom domain.
 

@@ -5,6 +5,20 @@ import ArticleModel from './models/ArticleModel';
 import WorkModel from './models/WorkModel';
 
 class PagePublisher {
+  public static publishPage(page?: 'index' | 'about') {
+    switch (page) {
+      case 'index':
+        PagePublisher.publishIndex();
+        break;
+      case 'about':
+        PagePublisher.publishAbout();
+        break;
+      default:
+        PagePublisher.publishIndex();
+        PagePublisher.publishAbout();
+    }
+  }
+
   /**
    * Builds `index` page template file.
    */
