@@ -6,7 +6,7 @@ import Watcher from 'watcher';
 import PagePublisher from '../services/PagePublisher';
 import ArticlePublisher from '../services/ArticlePublisher';
 
-const DIST = './dist';
+const DIST = './app/public';
 
 console.log('\x1b[36m%s\x1b[0m', 'Watch changes...');
 
@@ -17,13 +17,6 @@ templateWatcher.on('all', (_, path) => {
   if (match) {
     const filename = match[1];
     PagePublisher.publishPage(filename);
-    exec(`cp -rf ./app/public/* ${DIST}/`, (err, __, stderr) => {
-      if (err) {
-        console.log(`error: ${err.message}`);
-      } else if (stderr) {
-        console.log(`stderr: ${stderr}`);
-      }
-    });
   }
 });
 

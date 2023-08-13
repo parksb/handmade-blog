@@ -8,11 +8,12 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "live-server ./dist --no-browser",
+    "start": "npm run build:file && live-server ./app/public/ --no-browser",
     "watch": "tsx ./tools/watch.ts",
     "publish": "tsx ./tools/publish.ts",
     "build": "bash ./tools/build.sh",
-    "deploy": "bash ./tools/deploy.sh"
+    "deploy": "bash ./tools/deploy.sh",
+    "build:file": "mkdir -p ./app/public/styles && cp -rf ./app/styles/* ./app/public/styles/ && mkdir -p ./app/public/assets && cp -rf ./app/assets/* ./app/public/assets/ && mkdir -p ./app/public/images && cp -rf ./images/* ./app/public/images/"
   },
   "author": "parksb",
   "license": "MIT",

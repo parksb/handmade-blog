@@ -165,7 +165,7 @@ class ArticlePublisher {
       const prevArticle = articleFiles[index - 1]
           && ArticlePublisher.getArticleByFilename(articleFiles[index - 1]).getArticle();
 
-      if (id) {
+      if (id !== undefined) {
         if (article.id === id) {
           console.log(`* ${article.id}: ${article.title}`);
           fs.writeFileSync(
